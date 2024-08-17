@@ -36,9 +36,9 @@ async function show_post() {
     querySnapshot.forEach((doc) => {
         console.log(doc.data());
         div4.innerHTML+=`
-        <div id="div5" class='bor col-3'>
-          <div class'div6'>
-             <p>${doc.data().title}</p>
+        <div id="div5" class='col-3 mb-3'>
+          <div class='div6 p-3'>
+             <p class='fw-bold fs-5'>${doc.data().title.slice(0,1).toUpperCase()}${doc.data().title.slice(1)}</p>
              <p>${doc.data().discription}</p>
           </div>
         </div>
