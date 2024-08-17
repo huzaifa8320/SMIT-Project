@@ -1,0 +1,118 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.bor {
+    border: 2px solid red;
+}
+
+.main {
+    /* background-image: url(../files/Login\ background.jpg); */
+    background-color: #4070F4;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    /* overflow-x: hidden; */
+    background-size: cover;
+    background-position: center;
+}
+
+.form_login {
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.286);
+}
+
+.form_sign{
+    width: 400px;
+    height: 550px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.286);
+}
+
+.email_div,
+.pass_div {
+    border: 2px solid rgba(128, 128, 128, 0.25);
+    height: 50px;
+    border-radius: 10px;
+}
+
+#email_log,
+#pass_log ,
+#name_sign,
+#email_sign,
+#pass_sign{
+    border: none;
+    outline: none;
+    font-size: 17px;
+    color: rgba(128, 128, 128, 0.725);
+}
+
+#email_log::placeholder,
+#pass_log::placeholder,
+#name_sign::placeholder,
+#email_sign::placeholder,
+#pass_sign::placeholder{
+    color: rgba(128, 128, 128, 0.725);
+}
+
+.forgot {
+    color: #4070F4;
+    font-weight: 500;
+}
+
+#btn_login ,
+#btn_sign{
+    background-color: #4070F4;
+    color: white;
+    border: none;
+    font-weight: 500;
+    height: 45px;
+    border-radius: 10px;
+}
+
+#btn_login:hover,
+#btn_sign:hover{
+    transition: 0.4s;
+    transform: scale(1.03);
+}
+
+.signup {
+    color: rgb(128, 128, 128);
+}
+
+.div_google {
+    width: 28px;
+    height: 28px;
+}
+
+#btn_login_google ,
+#btn_sign_google{
+    height: 50px;
+    border: 2px solid rgba(128, 128, 128, 0.444);
+    background-color: white;
+    border-radius: 10px;
+    color: rgb(128, 128, 128);
+}
+
+#btn_login_google:hover,
+#btn_sign_google:hover{
+    transition: 0.4s;
+    transform: scale(1.03);
+}
+
+.horizon {
+    border: 1px solid rgba(128, 128, 128, 0.444);
+}
+
+.or {
+    background-color: white !important;
+    z-index: 1000;
+    color: rgb(128, 128, 128);
+    font-size: 20px;
+}
