@@ -29,9 +29,25 @@ btn_sign.addEventListener('click', function () {
                 const user = userCredential.user;
                 console.log(user);
                 console.log(user.uid);
-                Swal.fire("Account Created Successfully ✅");
-                btn_sign.innerHTML = 'Signup'
 
+                const docRef = doc(db, "User_details", user.uid);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    window.location.href = 'dashboard.html'
+                }
+                else {
+                    await setDoc(doc(db, "User_details", user.uid), {
+                        name: name_sign.value,
+                        email: user.email,
+                        status: user.emailVerified,
+                        photo:user.photoURL
+                    });
+                    Swal.fire("Account Created Successfully ✅");
+                    setTimeout(() => {
+                        window.location.href = 'dashboard.html'
+                    }, 1000);
+                }
+                btn_sign.innerHTML = 'Signup'
                 setTimeout(() => {
                     window.location.href = 'dashboard.html'
                 }, 1000);
@@ -67,6 +83,8 @@ btn_sign_google.addEventListener('click', function () {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
             const user = result.user;
+
+            
             const docRef = doc(db, "User_details", user.uid);
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
@@ -76,7 +94,8 @@ btn_sign_google.addEventListener('click', function () {
                 await setDoc(doc(db, "User_details", user.uid), {
                     name: user.displayName,
                     email: user.email,
-                    status: user.emailVerified
+                    status: user.emailVerified,
+                    photo:user.photoURL
                 });
                 Swal.fire("Account Created Successfully ✅");
                 setTimeout(() => {
