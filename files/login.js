@@ -7,6 +7,8 @@ let pass_log = document.getElementById('pass_log')
 
 // Email sign 
 btn_login.addEventListener('click', function () {
+  console.log('h');
+  
   if (email_log.value == '') {
     Swal.fire("Please Enter Emial 📝");
   }
@@ -23,7 +25,7 @@ btn_login.addEventListener('click', function () {
       Swal.fire("Login Successfully ✅");
       btn_login.innerHTML = 'Login'
       setTimeout(() => {
-        window.location.href = './files/dashboard.html'
+        window.location.href = '../index.html'
       }, 1000);
     })
     .catch((error) => {
@@ -36,18 +38,18 @@ btn_login.addEventListener('click', function () {
         else if (errorCode == 'auth/invalid-credential') {
           Swal.fire("Account Not Found 📝");
           setTimeout(() => {
-            window.location.href = 'files/signup.html'
+            window.location.href = 'signup.html'
           }, 1000);
         }
         console.log(errorMessage);
         btn_login.innerHTML = 'Login'
-        
       });
     }
   })
   
   // Google Login 
   btn_login_google.addEventListener('click', function () {
+    btn_login.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2" style="color: #ffffff;"></i>Login'
     signInWithPopup(auth, google_option)
     .then(async (result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -60,7 +62,7 @@ btn_login.addEventListener('click', function () {
       const docRef = doc(db, "User_details", user.uid);
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
-        window.location.href = 'files/dashboard.html'
+        window.location.href = '../index.html'
       }
       else {
         console.log('h');
@@ -73,9 +75,10 @@ btn_login.addEventListener('click', function () {
         });
         Swal.fire("Account Created Successfully ✅");
         setTimeout(() => {
-          window.location.href = 'files/dashboard.html'
+          window.location.href = '../index.html'
         }, 1000);
       }
+      btn_login.innerHTML = 'Login'
       
       
     }).catch((error) => {

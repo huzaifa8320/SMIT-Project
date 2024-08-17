@@ -2,8 +2,11 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    overflow: hidden;
 }
-
+/* #main_fo{
+    display: none;
+} */
 .bor {
     border: 2px solid red;
 }
@@ -14,10 +17,10 @@
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.237);
-    display: none;
     justify-content: center;
     align-items: center;
     z-index: 1020;
+    /* display: none; */
 }
 
 
@@ -33,8 +36,9 @@
     height: 80px;
 }
 
-#profile{
+#login_go {
     width: 100px;
+    /* width: auto; */
     background-color: white;
     color: #4070F4;
     height: 45px;
@@ -44,14 +48,106 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.335);
 }
 
-#profile:hover{
+#name_show {
+    width: auto;
+    background-color: white;
+    color: #4070F4;
+    height: 45px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.335);
+    display: none;
+}
+
+#create_post {
+    width: 180px;
+    background-color: white;
+    color: #4070F4;
+    height: 45px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.335);
+    display: none;
+}
+
+#login_go:hover {
     transition: 0.4s;
     transform: scale(1.08);
 }
 
-.div_img{
-    /* width: 180px; */
-    height: 180px;
+.div2 {
+    height: 200px;
     display: flex;
     justify-content: center;
+}
+
+#save {
+    height: 40px;
+    background-color: white;
+    border-radius: 15px;
+    border: none;
+    color: #0057D3;
+    font-weight: 500;
+}
+
+
+/* Loader -div  */
+#loader_div {
+    background-image: linear-gradient(-90deg, #0057D3, #00345C);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #0058d300;
+    border-bottom: 16px solid #0058d300;
+    width: 150px;
+    height: 150px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 1.2s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* End */
+
+
+.color_white{
+    color: white !important;
+}
+
+#title_post{
+    background-color: rgba(255, 255, 255, 0.787);
+    border: none;
+    outline: none;
+    height: 30px;
+}
+
+.click_upload{
+    background-color: white;
+    width: 180px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    color: #0057D3;
+    font-weight: 500;
+}
+
+.div6{
+    background-color: #4070F4;
+    height: 10px !important;
 }

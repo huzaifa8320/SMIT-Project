@@ -33,7 +33,7 @@ btn_sign.addEventListener('click', function () {
                 const docRef = doc(db, "User_details", user.uid);
                 const docSnap = await getDoc(docRef);
                 if (docSnap.exists()) {
-                    window.location.href = 'dashboard.html'
+                    window.location.href = '../index.html'
                 }
                 else {
                     await setDoc(doc(db, "User_details", user.uid), {
@@ -44,13 +44,10 @@ btn_sign.addEventListener('click', function () {
                     });
                     Swal.fire("Account Created Successfully ✅");
                     setTimeout(() => {
-                        window.location.href = 'dashboard.html'
+                        window.location.href = '../index.html'
                     }, 1000);
                 }
                 btn_sign.innerHTML = 'Signup'
-                setTimeout(() => {
-                    window.location.href = 'dashboard.html'
-                }, 1000);
 
             })
             .catch((error) => {
@@ -88,7 +85,7 @@ btn_sign_google.addEventListener('click', function () {
             const docRef = doc(db, "User_details", user.uid);
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
-                window.location.href = 'dashboard.html'
+                window.location.href = '../index.html'
             }
             else {
                 await setDoc(doc(db, "User_details", user.uid), {
@@ -99,7 +96,7 @@ btn_sign_google.addEventListener('click', function () {
                 });
                 Swal.fire("Account Created Successfully ✅");
                 setTimeout(() => {
-                    window.location.href = 'dashboard.html'
+                    window.location.href = '../index.html'
                 }, 1000);
             }
             btn_sign.innerHTML = 'Signup'

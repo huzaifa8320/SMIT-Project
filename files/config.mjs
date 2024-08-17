@@ -2,10 +2,10 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 
 //   Auth provider Importing 
-import { GoogleAuthProvider , getAuth , signInWithPopup , onAuthStateChanged , createUserWithEmailAndPassword , signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+import { GoogleAuthProvider , getAuth , signInWithPopup , onAuthStateChanged , createUserWithEmailAndPassword , signInWithEmailAndPassword , signOut} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
 // Firestore provider Importing
-import { getFirestore , collection, addDoc , setDoc , doc , getDoc} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import { getFirestore , collection, addDoc , setDoc , doc , getDoc , getDocs} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyClyAIBdoVZQlNOrb6qR7r87CmOLKZqPH4",
@@ -36,5 +36,7 @@ export {
     signInWithEmailAndPassword,
     setDoc,
     doc,
-    getDoc
+    getDoc,
+    signOut, 
+    getDocs
 }
