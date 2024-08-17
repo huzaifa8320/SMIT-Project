@@ -43,6 +43,7 @@ async function show_post() {
           </div>
         </div>
         `
+        data.style.display = 'none'
     });
 }
 show_post()
