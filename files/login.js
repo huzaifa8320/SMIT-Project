@@ -8,7 +8,7 @@ let pass_log = document.getElementById('pass_log')
 // Email sign 
 btn_login.addEventListener('click', function () {
   console.log('h');
-  
+
   if (email_log.value == '') {
     Swal.fire("Please Enter Emial 📝");
   }
@@ -18,23 +18,23 @@ btn_login.addEventListener('click', function () {
   else {
     btn_login.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2" style="color: #ffffff;"></i>Login'
     signInWithEmailAndPassword(auth, email_log.value, pass_log.value)
-    .then(async (userCredential) => {
-      const user = userCredential.user;
-      console.log(user);
-      console.log(user.uid);
-      Swal.fire("Login Successfully ✅");
-      btn_login.innerHTML = 'Login'
-      setTimeout(() => {
-        window.location.href = '../index.html'
-      }, 1000);
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode);
-      if (errorCode == 'auth/invalid-email') {
-        Swal.fire("Please Enter a Valid Email 📝");
-      }
+      .then(async (userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        console.log(user.uid);
+        Swal.fire("Login Successfully ✅");
+        btn_login.innerHTML = 'Login'
+        setTimeout(() => {
+          window.location.href = '../index.html'
+        }, 1000);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode);
+        if (errorCode == 'auth/invalid-email') {
+          Swal.fire("Please Enter a Valid Email 📝");
+        }
         else if (errorCode == 'auth/invalid-credential') {
           Swal.fire("Account Not Found 📝");
           setTimeout(() => {
@@ -44,13 +44,13 @@ btn_login.addEventListener('click', function () {
         console.log(errorMessage);
         btn_login.innerHTML = 'Login'
       });
-    }
-  })
-  
-  // Google Login 
-  btn_login_google.addEventListener('click', function () {
-    btn_login.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2" style="color: #ffffff;"></i>Login'
-    signInWithPopup(auth, google_option)
+  }
+})
+
+// Google Login 
+btn_login_google.addEventListener('click', function () {
+  btn_login.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2" style="color: #ffffff;"></i>Login'
+  signInWithPopup(auth, google_option)
     .then(async (result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
@@ -58,7 +58,7 @@ btn_login.addEventListener('click', function () {
       console.log(credential);
       console.log(token);
       console.log(user);
-      
+
       const docRef = doc(db, "User_details", user.uid);
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
@@ -66,7 +66,7 @@ btn_login.addEventListener('click', function () {
       }
       else {
         console.log('h');
-        
+
         await setDoc(doc(db, "User_details", user.uid), {
           name: user.displayName,
           email: user.email,
@@ -79,8 +79,8 @@ btn_login.addEventListener('click', function () {
         }, 1000);
       }
       btn_login.innerHTML = 'Login'
-      
-      
+
+
     }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -92,15 +92,19 @@ btn_login.addEventListener('click', function () {
         Swal.fire("Network Connection Error 🔌");
       }
     }
-  )
+    )
 })
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//     const uid = user.uid;
-//     window.location.href = './files/dashboard.html'
-//   }
-
-//   else {
-//     console.log('user is not sign');
-//   }
-// });
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+    getDoc(doc(db, "User_details", uid)).then((docSnap) => {
+      if (docSnap.exists()) {
+        window.location.href = '../index.html';
+      } else {
+        console.log('User details not found.');
+      }
+    });
+  } else {
+    console.log('User is not signed in.');
+  }
+})

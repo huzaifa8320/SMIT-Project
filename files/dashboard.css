@@ -85,9 +85,9 @@
 }
 
 #create_post {
-    width: 180px;
-    background-color: white;
-    color: #4070F4;
+    width: 150px;
+    background-color: #0057D3;
+    color: white;
     height: 45px;
     border: none;
     border-radius: 25px;
@@ -260,6 +260,23 @@
     height: auto;
     border-radius: 10px;
     word-wrap: break-word;
+    width: 50%;
+}
+
+@media(max-width:800px){
+    .div6{
+        width: 70%;
+    }
+}
+@media(max-width:600px){
+    .div6{
+        width: 85%;
+    }
+}
+@media(max-width:500px){
+    .div6{
+        width: 100%;
+    }
 }
 
 .div7 {
@@ -308,4 +325,20 @@
     color: #ffff;
     font-weight: 500;
     margin-top: 15px;
+}
+
+.img_post_user{
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.logo_div{
+    width: 60px;
+    height: 60px;
+}
+.navbar-bg{
+    background-color: #4070F4;
+}
+.blog_disc{
+    font-size: 15px;
 }

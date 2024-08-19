@@ -9,8 +9,10 @@
     <!-- Custom css  -->
     <link rel="stylesheet" href="./files/dashboard.css">
 
-        <!-- Font awesome  -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Bootstrap css  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -23,19 +25,82 @@
         <div id="loader"></div>
     </div>
     <div class="main" id="main_fo">
-        <div class="div1 fixed-top d-flex align-items-center">
+
+
+
+        <!-- Nave bar start  -->
+
+        <nav class="navbar navbar-expand-lg navbar-bg fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <div class="logo_div1 d-flex align-items-center">
+                        <div class="logo_div">
+                            <img src="files/logo.png" alt="" class="w-100 h-100">
+                        </div>
+                        <div class="logo_name color_white">
+                            <p class="mb-0 fw-bolder">MH Blog</p>
+                            <p class="mb-0 fw-semibold blog_disc">Your Own Blog</p>
+                        </div>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto gap-3">
+                        <li class="nav-item mt-3 mt-lg-0 d-flex d-lg-block justify-content-center">
+                                <button id="home_post_show" class="fw-semibold">Home 🌎</button>
+                        </li>
+                        <li class="nav-item mt-3 mt-lg-0 d-flex d-lg-block justify-content-center">
+                                <button id="my_post_show" class="fw-semibold">My Posts 📝</button>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item mt-3 mt-lg-0 d-flex d-lg-block justify-content-center">
+                                <button id="name_show" class="fw-semibold px-3"></button>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav bor">
+                        <li class="nav-item bor">
+                            <a class="nav-link bor" href="./files/login.html">
+                                <div class="d-flex justify-content-center">
+                                <button id="login_go" class="fw-semibold bor">Login</button>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <button class="position-fixed bottom-0 end-0 m-4" id="create_post">✍Create post</button>
+        <!-- Nave bar start end -->
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="div1 fixed-top d-flex align-items-center bor">
             <button id="home_post_show" class="fw-semibold me-3 px-3 ms-auto">Home 🌎</button>
             <button id="my_post_show" class="fw-semibold me-3 px-3">My Posts ✍</button>
             <a href="./files/login.html" class=""><button id="login_go" class="fw-semibold me-3 px-3">Login</button></a>
             <button id="create_post" class="fw-semibold me-3 px-3">✍Create_post</button>
             <button id="name_show" class="fw-semibold me-3 px-3"></button>
-        </div>
+        </div> -->
         <div id="data">
             <div id="values" class="px-3">
                 <p class="py-3 fs-5 fw-bold color_white">Title</p>
                 <input type="text" placeholder="Enter text" id="title_post" class="w-100 ps-2">
                 <p class="pt-3 fs-5 fw-bold color_white">Discription</p>
-                <textarea name="" id="dis_post" class="w-100 h-25"></textarea>
+                <textarea name="" id="dis_post" class="w-100 h-25 p-2" placeholder="Description"></textarea>
                 <p class="pt-3 fs-5 fw-bold color_white">Upload Image</p>
                 <div class="click_upload w-100 d-flex justify-content-center align-items-center bor">
                     <input type="file" name="" id="img_post" class="w-75">
@@ -44,7 +109,7 @@
             </div>
         </div>
         <div class="container-fluid mt-5 pt-5">
-            <div class="row" id="div4"></div>
+            <div class="row mt-4" id="div4"></div>
             <div id="div8" class="row mt-3"></div>
         </div>
     </div>

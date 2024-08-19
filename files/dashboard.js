@@ -140,7 +140,7 @@ const unsubscribe = onSnapshot(collection(db, "post"), (snapshot) => {
         const userPhoto = data.display_photo ? data.display_photo : 'files/default_user.avif'; // Default image path
         div4.innerHTML += `
             <div id="div5" class='col-12 mb-5 d-flex justify-content-center'>
-                    <div class='div6 w-50 p-3'>
+                    <div class='div6  p-3'>
                            <div class="show_dp d-flex align-items-center">
                                 <div class="dp">
                                    <img src="${userPhoto}" alt="" class='h-100 dp_img'>
@@ -151,11 +151,11 @@ const unsubscribe = onSnapshot(collection(db, "post"), (snapshot) => {
                                 </div>
                            </div>
                                       
-                            <p class='fw-semibold title_post_user mt-3'>${data.title.slice(0, 1).toUpperCase()}${data.title.slice(1)} :-</p>
+                            <p class='fw-semibold title_post_user mt-3'>${data.title.slice(0, 1).toUpperCase()}${data.title.slice(1)} :</p>
                             <p class='w-100 dis_post_user'>${data.discription}</p>
                             ${data.post_image ? `
                             <div class='div7 d-flex justify-content-center'>
-                                <img src="${data.post_image}" alt="" class='h-100'>
+                                <img src="${data.post_image}" alt="" class='h-100 img_post_user'>
                             </div>
                             ` : ''}
                     </div>
@@ -239,7 +239,7 @@ function show_post() {
                         </div>
                     </div>
                     
-                    <p class='fw-semibold title_post_user mt-3'>${data.title.slice(0, 1).toUpperCase()}${data.title.slice(1)} :-</p>
+                    <p class='fw-semibold title_post_user mt-3'>${data.title.slice(0, 1).toUpperCase()}${data.title.slice(1)} :</p>
                     <p class='w-100 dis_post_user'>${data.discription}</p>
                     ${data.post_image ? `
                     <div class='div7 d-flex justify-content-center'>
