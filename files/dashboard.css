@@ -2,11 +2,13 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
-/* #main_fo{
+
+#main_fo {
     display: none;
-} */
+}
+
 .bor {
     border: 2px solid red;
 }
@@ -16,20 +18,41 @@
     top: 0px;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.237);
+    /* background-color: rgba(0, 0, 0, 0.237); */
+    background-color: white;
     justify-content: center;
     align-items: center;
-    z-index: 1020;
-    /* display: none; */
+    z-index: 1030;
+    display: none;
 }
 
+#edit_data {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100vh;
+    /* background-color: rgba(0, 0, 0, 0.237); */
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    z-index: 1030;
+    display: none;
+}
 
 #values {
-    width: 300px;
+    width: 400px;
     height: 500px;
     border-radius: 10px;
     background-color: #4070F4;
 }
+
+#edit_values {
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    background-color: rebeccapurple;
+}
+
 
 .div1 {
     background-color: #4070F4;
@@ -72,6 +95,30 @@
     display: none;
 }
 
+#my_post_show {
+    width: 180px;
+    background-color: white;
+    color: #4070F4;
+    height: 45px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.335);
+    display: none;
+}
+
+#home_post_show {
+    width: 180px;
+    background-color: white;
+    color: #4070F4;
+    height: 45px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.335);
+    /* display: none; */
+}
+
 #login_go:hover {
     transition: 0.4s;
     transform: scale(1.08);
@@ -92,6 +139,15 @@
     font-weight: 500;
 }
 
+#edit_save {
+    height: 40px;
+    background-color: white;
+    border-radius: 15px;
+    border: none;
+    color: #0057D3;
+    font-weight: 500;
+}
+
 
 /* Loader -div  */
 #loader_div {
@@ -100,6 +156,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 9999;
 }
 
 #loader {
@@ -111,33 +168,66 @@
     height: 150px;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 1.2s linear infinite;
-  }
-  
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+}
 
-  /* End */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* End */
 
 
-.color_white{
+/* Second  */
+#loader_div_second {
+    background-color: rgba(0, 0, 255, 0.194);
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999 !important;
+}
+
+#loader_second {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #0058d300;
+    border-bottom: 16px solid #0058d300;
+    width: 150px;
+    height: 150px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 1.2s linear infinite;
+}
+
+/* end  */
+
+.color_white {
     color: white !important;
 }
 
-#title_post{
+#title_post {
     background-color: rgba(255, 255, 255, 0.787);
     border: none;
     outline: none;
     height: 30px;
 }
 
-.click_upload{
+.click_upload {
     background-color: white;
     width: 180px;
     height: 40px;
@@ -147,7 +237,67 @@
     font-weight: 500;
 }
 
-.div6{
+.edit_click_upload {
+    background-color: white;
+    width: 180px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    color: #0057D3;
+    font-weight: 500;
+}
+
+.div6 {
     background-color: rgba(128, 128, 128, 0.325);
-    height: 100px !important;
+    height: auto;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+
+.div7 {
+    height: auto;
+}
+
+.title_post_user {
+    font-size: 20px;
+}
+
+.dp {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.dp_img {
+    border-radius: 50%;
+}
+
+.timing_post {
+    font-size: 15px;
+}
+
+#div8 {
+    display: none;
+}
+
+
+.no_post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 100px;
+}
+
+.del_spec_post ,
+.edit_spec_post{
+    background-color: #4070F4;
+    width: 140px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    color: #ffff;
+    font-weight: 500;
+    margin-top: 15px;
 }

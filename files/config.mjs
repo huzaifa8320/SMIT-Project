@@ -5,7 +5,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/fireba
 import { GoogleAuthProvider , getAuth , signInWithPopup , onAuthStateChanged , createUserWithEmailAndPassword , signInWithEmailAndPassword , signOut} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
 // Firestore provider Importing
-import { getFirestore , collection, addDoc , setDoc , doc , getDoc , getDocs} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import { getFirestore , collection, addDoc , setDoc , doc , getDoc , getDocs , onSnapshot , deleteDoc , updateDoc} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+
+
+// Storage provider Importing
+import { getStorage , ref , uploadBytesResumable , getDownloadURL} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-storage.js";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyClyAIBdoVZQlNOrb6qR7r87CmOLKZqPH4",
@@ -21,6 +26,7 @@ const app = initializeApp(firebaseConfig);
 const google_option = new GoogleAuthProvider();
 const auth = getAuth(app);
 const db = getFirestore(app);
+const storage = getStorage();
 
 export {
     app,
@@ -38,5 +44,12 @@ export {
     doc,
     getDoc,
     signOut, 
-    getDocs
+    getDocs,
+    onSnapshot,
+    storage,
+    ref,
+    uploadBytesResumable,
+    getDownloadURL,
+    deleteDoc,
+    updateDoc
 }
