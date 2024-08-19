@@ -155,7 +155,7 @@ const unsubscribe = onSnapshot(collection(db, "post"), (snapshot) => {
                             <p class='w-100 dis_post_user'>${data.discription}</p>
                             ${data.post_image ? `
                             <div class='div7 d-flex justify-content-center'>
-                                <img src="${data.post_image}" alt="" class='w-100'>
+                                <img src="${data.post_image}" alt="" class='h-100'>
                             </div>
                             ` : ''}
                     </div>
@@ -243,7 +243,7 @@ function show_post() {
                     <p class='w-100 dis_post_user'>${data.discription}</p>
                     ${data.post_image ? `
                     <div class='div7 d-flex justify-content-center'>
-                        <img src="${data.post_image}" alt="" class='w-100 img_post_user'>
+                        <img src="${data.post_image}" alt="" class='h-100 img_post_user'>
                     </div>
                     ` : ''}
                      <button data-id="${doc.id}" class='del_spec_post' >Delete Post</button>
